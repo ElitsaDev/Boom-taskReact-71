@@ -5,8 +5,6 @@ export default function Document(props) {
     let content = props.content;
     const [ disable, setDisable] = useState(true);
     
-    
-
     const handleScroll = e => {
         const atBottom = Math.ceil(e.target.scrollTop + e.target.clientHeight) >= e.target.scrollHeight;
 
@@ -25,7 +23,7 @@ export default function Document(props) {
                 }
             }
         >{content}</div>
-        <button disabled={disable}
+        <button disabled={disable ? true : false}
                     >I Agree</button>
         </>
     );

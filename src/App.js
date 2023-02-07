@@ -23,20 +23,10 @@ function App() {
 
     return (
         <div className="App">
-            <section className="hero">
-                <div className="hero-body">
-                    <p className="title">{title}</p>
-                    <p className="subtitle">by Boom.dev</p>
-                </div>
-            </section>
-            <div className="container is-fullhd">
-                <div className="notification">
-                    <Document
-                        title={title}
-                        content={data}
-                    />  
-                </div>
-            </div>
+            <Document
+                title={title}
+                content={data}
+            />         
         </div>
     );
 }
