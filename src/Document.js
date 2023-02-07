@@ -12,9 +12,11 @@ export default function Document(props) {
             setDisable(false);
         }
     };
+    
     return (
-        <>
-        <div className="content" title={title} onScroll={handleScroll}
+        <section>
+        <h1 className="title">{title}</h1>
+        <div className="content" onScroll={handleScroll}
             style={
                 {
                     overflowY: "scroll",
@@ -25,6 +27,6 @@ export default function Document(props) {
         >{content}</div>
         <button disabled={disable ? true : false}
                     >I Agree</button>
-        </>
+        </section>
     );
 }
