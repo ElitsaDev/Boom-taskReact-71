@@ -1,18 +1,16 @@
-import { useState } from "react";
-
 export default function Document(props) {
     let title = props.title;
     let content = props.content;
-    const [ disable, setDisable] = useState(true);
-    
+  
     const handleScroll = e => {
         const atBottom = Math.ceil(e.target.scrollTop + e.target.clientHeight) >= e.target.scrollHeight;
-
-        if (atBottom) {
-            setDisable(false);
+        
+        if(atBottom){
+            document.querySelector('button').removeAttribute('disabled')
         }
     };
-    
+
+
     return (
         <section>
         <h1 className="title">{title}</h1>
@@ -25,7 +23,7 @@ export default function Document(props) {
                 }
             }
         >{content}</div>
-        <button disabled={disable ? true : false}
+        <button disabled
                     >I Agree</button>
         </section>
     );
